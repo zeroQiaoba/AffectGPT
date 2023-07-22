@@ -1,0 +1,26 @@
+model:
+  arch: video_llama
+  model_type: pretrain_vicuna
+
+  # Video-LLaMA
+  ckpt:   'models/finetune_vicuna7b_videobranch.pth'
+  ckpt_2: 'models/finetune_vicuna7b_audiobranch.pth'
+
+  # Other pre-trained models
+  llama_model: 'models/vicuna-7b-v0'
+  q_former_model: "models/blip2_pretrained_flant5xxl.pth"
+  imagebind_ckpt_path: "models/imagebind_huge.pth"
+
+datasets:
+  webvid:
+    vis_processor:
+      train:
+        name: "alpro_video_eval"
+        n_frms: 8
+        image_size: 224
+    text_processor:
+      train:
+        name: "blip_caption"
+
+run:
+  task: video_text_pretrain
