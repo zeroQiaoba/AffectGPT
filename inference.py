@@ -70,7 +70,6 @@ if __name__ == "__main__":
     parser.add_argument('--label_path',  type=str, default="instruction-dataset/EmoReason/gt-eng.csv",  help='label path')
     parser.add_argument('--no_subtitle', action='store_true', default=False, help='whether use subtitle in the inference (A+V+T)')
     parser.add_argument('--user_message',type=str, default="From what clues can we infer the person's emotional state?", help='input user message')
-    parser.add_argument('--save_root',   type=str, default=None,  help='where to save output')
 
     # test multiple saved files (accelerate)
     parser.add_argument('--ckpt_root',    type=str, default=None,  help='test multiple files')
@@ -97,7 +96,6 @@ if __name__ == "__main__":
         cfg.model_cfg.ckpt_3 = ckpt # ckpt_3 has the highest priority
         model_config = cfg.model_cfg
         model_config.device_8bit = args.gpu_id # for low-resource run-up
-        print("Load Checkpoint: {}".format(model_config.ckpt_3))
 
         if ii == 0: # first-round: initialize models
             model_cls = registry.get_model_class(model_config.arch)
@@ -144,8 +142,8 @@ if __name__ == "__main__":
 
         print ('Step3: save results for one ckpt_3')
         save_root = os.path.basename(args.ckpt_root)
-        if not os.path.exists(args.save_root): os.makedirs(args.save_root)
+        if not os.path.exists(save_root): os.makedirs(save_root)
         epoch = os.path.basename(cfg.model_cfg.ckpt_3).split('_')[1]
-        save_path = f'{args.save_root}/epoch-{epoch}.npz'
+        save_path = f'{save_root}/epoch-{epoch}.npz'
         np.savez_compressed(save_path,
                             whole_results=whole_results)
