@@ -1,4 +1,4 @@
-# AffectGPT: Audio-Video-Text Aligned Model for Explainable Multimodal Emotion Reasoning
+# AffectGPT: Audio-Video-Text Aligned, Human-centric Model for Explainable Multimodal Emotion Reasoning
 
 
 
