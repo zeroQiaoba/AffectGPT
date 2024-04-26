@@ -39,7 +39,7 @@ Due to the high annotation cost, we only select 100 non-neutral samples to form 
 
 (3) EMER-V2
 
-However, the description obtained in previous manner is short and cannot cover multi-faceted clues. Therefore, we use GPT-4V to provide initial annotations, combining with manual check and ChatGPT's reasoning capabilities. See **https://arxiv.org/abs/2306.15401v5** for more details. We provide the annotated results in **./EMER/dataset-v2**. (332 samples)
+However, the description obtained in previous manner is short and cannot cover multi-faceted clues. Therefore, we use GPT-4V to provide initial annotations, combining with manual check and ChatGPT's reasoning capabilities. See **https://arxiv.org/abs/2306.15401** for more details. We provide the annotated results in **./EMER/dataset-v2**. (332 samples)
 
 
 
