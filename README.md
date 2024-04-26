@@ -6,7 +6,7 @@
 
 Emotions are related to multi-faceted clues, such as facial expressions, prosody, gestures (or micro-gestures), etc. It is inappropriate to identify emotions from just one aspect. **EMER provides a general format for all emotion-related tasks, aiming to integrate multiple clues and generate more comprehensive descriptions.**
 
-<img src="H:\desktop\AffectGPT-master\AffectGPT-master\image\example.png" alt="example " style="zoom:80%;" />
+<img src="image\example.png" alt="example " style="zoom:80%;" />
 
 Details can be found in our paper: [**Explainable Multimodal Emotion Reasoning**](https://arxiv.org/pdf/2306.15401.pdf)
 
