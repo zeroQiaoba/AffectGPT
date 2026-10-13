@@ -1,11 +1,8 @@
-<p align="center">
-    <img src="OV-MER/assert/logo.png" width="150" style="margin-bottom: 0.2;"/> <img src="AffectGPT/assert/logo.png" width="150" style="margin-bottom: 0.2;"/> <img src="EmoPrefer/assert/icon.png" width="260" style="margin-bottom: 0.2;"/> 
-<p>
-
 <h3 align="center"><a href="https://openreview.net/pdf?id=Y8lfuSoqQz" style="color:#9C276A">
 OV-MER &</a><a href="https://openreview.net/pdf?id=xmbdACI0xu" style="color:#9C276A">
 AffectGPT &</a><a href="https://arxiv.org/pdf/2507.04278" style="color:#9C276A">
-EmoPrefer</a></h3> 
+EmoPrefer &</a><a href="https://arxiv.org/pdf/2605.06126" style="color:#9C276A">
+AffectGPT-RL</a></h3> 
 
 <h5 align="center"> If our project helps you, please give us a star ⭐ on GitHub to support us. 🙏🙏 </h2>
 
@@ -36,6 +33,11 @@ We propose **EmoPrefer**, a pioneering work exploring the potential of LLMs in d
 
 <img src="EmoPrefer/assert/framework.png" width="800" />
 
+## 🚀 AffectGPT-RL
+**Open-Vocabulary Multimodal Emotion Recognition (OV-MER)** removes the restriction of a predefined label space, enabling fine-grained emotion understanding. Instead of relying on discriminative classifiers, OV-MER uses generative models to capture the full spectrum of emotions, and evaluates them with **emotion wheels (EWs)**. Existing approaches are trained with a *token-level* loss, which is **misaligned** with the metrics actually used in OV-MER: *joyful* and *awful* share high token-level similarity yet are semantically far apart. Worse, EW-based metrics are **non-differentiable** — they involve stochastic sampling, discrete word-to-word clustering, and set-cardinality operations — so they cannot be optimized by gradient backpropagation at all. **AffectGPT-RL** addresses this with reinforcement learning, which can optimize non-differentiable objectives. EW-based metrics are used as **reward functions**, so that the training objective is directly aligned with the evaluation metric. Extensive experiments reveal the role of reinforcement learning in this task.
+
+<img src="AffectGPT-RL/image/overall.png" width="800" />
+
 ## 📑 Citation
 
 If you find this project useful for your research and applications, please cite using this BibTeX:
@@ -61,6 +63,14 @@ If you find this project useful for your research and applications, please cite 
   title={EmoPrefer: Can Large Language Models Understand Human Emotion Preferences?},
   author={Lian, Zheng and Sun, Licai and Chen, Lan and Chen, Haoyu and Cheng, Zebang and Zhang, Fan and Jia, Ziyu and Ma, Ziyang and Ma, Fei and Peng, Xiaojiang and others},
   booktitle={Proceedings of the International Conference on Learning Representations, {ICLR}},
+  year={2026}
+}
+
+# AffectGPT-RL
+@inproceedings{lian2026affectgptrl,
+  title={AffectGPT-RL: Revealing Roles of Reinforcement Learning in Open-Vocabulary Emotion Recognition},
+  author={Lian, Zheng and Zhang, Fan and Chen, Lan and Zhang, Yazhou and Liu, Rui and Wu, Jinyang and Chen, Haoyu and Li, Xiaobai and Peng, Xiaojiang and He, Bin and Tao, Jianhua},
+  booktitle={Advances in Neural Information Processing Systems},
   year={2026}
 }
 
@@ -97,10 +107,15 @@ If you find this project useful for your research and applications, please cite 
   booktitle={Proceedings of the 33th ACM International Conference on Multimedia},
   year={2025}
 }
-```
 
-## 👍 Acknowledgement
-We evaluate the performance of various LLM-based baselines on OV-MERD, including [**SECap**](https://github.com/thuhcsi/SECap), [**SALMONN**](https://github.com/bytedance/SALMONN), [**Qwen-Audio**](https://github.com/QwenLM/Qwen-Audio), [**Otter**](https://github.com/Luodian/Otter), [**OneLLM**](https://github.com/csuhan/OneLLM), [**PandaGPT**](https://github.com/yxuansu/PandaGPT), [**VideoChat**](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat), [**VideoChat2**](https://github.com/OpenGVLab/Ask-Anything/tree/main/video_chat2), [**Video-LLaMA**](https://github.com/DAMO-NLP-SG/Video-LLaMA), [**Video-LLaVA**](https://github.com/PKU-YuanGroup/Video-LLaVA), [**Video-ChatGPT**](https://github.com/mbzuai-oryx/Video-ChatGPT), [**LLaMA-VID**](https://github.com/dvlab-research/LLaMA-VID), [**mPLUG-Owl**](https://github.com/X-PLUG/mPLUG-Owl), and [**Chat-UniVi**](https://github.com/PKU-YuanGroup/Chat-UniVi). We extend our gratitude to the authors for their excellent work.
+# MER2026 Dataset
+@article{lian2026mer,
+  title={MER 2026: From Discriminative Emotion Recognition to Generative Emotion Understanding},
+  author={Lian, Zheng and Peng, Xiaojiang and Xu, Kele and Jia, Ziyu and Che, Xinyi and Fang, Kuofei and Cheng, Zebang and Ma, Fei and Cui, Laizhong and Zhang, Yazhou and others},
+  journal={arXiv preprint arXiv:2604.19417},
+  year={2026}
+}
+```
 
 ## 🔒 License
 
