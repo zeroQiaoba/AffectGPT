@@ -27,11 +27,11 @@ Zheng Lian, Fan Zhang, Lan Chen, Yazhou Zhang, Rui Liu, Jinyang Wu, Haoyu Chen, 
 <div align="center">
 <table width="600"><tr><td>
 
-• **(Framework)** This is the first work to reveal the role of reinforcement learning in OV-MER.
+**(Framework)** This is the first work to reveal the role of reinforcement learning in OV-MER.
 
-• **(Experiment)** We conduct systematic experiments, revealing the role of the reasoning process, the impact of different rewards, and the generalization of reinforcement learning to other tasks.
+**(Experiment)** We conduct systematic experiments, revealing the role of the reasoning process, the impact of different rewards, and the generalization of reinforcement learning to other tasks.
 
-• **(Performance)** Our method achieves state-of-the-art performance on fine-grained and basic emotion recognition, highlighting the potential of reinforcement learning in affective computing.
+**(Performance)** Our method achieves state-of-the-art performance on fine-grained and basic emotion recognition, highlighting the potential of reinforcement learning in affective computing.
 
 </td></tr></table>
 </div>
@@ -160,11 +160,11 @@ Either way, keep everything under `dataset/`: the `audio/`, `video/` and `openfa
     <td>Text Encoder / Tokenizer of the Q-Formers</td>
   </tr>
   <tr>
-    <td><a href="https://pan.baidu.com/s/1jc7oD6Z1vlUq6r3Wfb5_eg?pwd=ifpg">mercaptionplus_<wbr>outputhybird_<wbr>bestsetup_<wbr>bestfusion_<wbr>face_<wbr>r1stage1</a></td>
+    <td><a href="https://pan.baidu.com/s/1jc7oD6Z1vlUq6r3Wfb5_eg?pwd=ifpg">mercaptionplus_&#8203;outputhybird_&#8203;bestsetup_&#8203;bestfusion_&#8203;face_&#8203;r1stage1</a></td>
     <td><b>Stage 1 (cold start)</b>: trained on <b>MER-Caption+</b> with pre-extracted <b>face</b> as input</td>
   </tr>
   <tr>
-    <td><a href="https://pan.baidu.com/s/11LfKslZA2KMoLCRwkKtnVA?pwd=45jk">mercaptionplus_<wbr>outputhybird_<wbr>bestsetup_<wbr>bestfusion_<wbr>face_<wbr>r1stage2_<wbr>mer25ov1000_<wbr>continue60_<wbr>g4_<wbr>formatbeta00_<wbr>ovlabel_<wbr>numrestrict3</a></td>
+    <td><a href="https://pan.baidu.com/s/11LfKslZA2KMoLCRwkKtnVA?pwd=45jk">mercaptionplus_&#8203;outputhybird_&#8203;bestsetup_&#8203;bestfusion_&#8203;face_&#8203;r1stage2_&#8203;mer25ov1000_&#8203;continue60_&#8203;g4_&#8203;formatbeta00_&#8203;ovlabel_&#8203;numrestrict3</a></td>
     <td><b>Stage 2 (RL)</b>: GRPO optimization on MER2025-OV (<i>P</i><sub>3</sub> length penalty), continued from the Stage-1 epoch-60 checkpoint</td>
   </tr>
 </table>
@@ -197,20 +197,12 @@ AffectGPT-RL
 
 ## 🏃 Reproduction
 
-<div align="center">
-<table width="600"><tr><td>
-
-[run-release.sh](./run-release.sh): **Stage 0** prepares the environment and the data, and **Stages 1–3** run **five commands**.
-
-</td></tr></table>
-</div>
-
 | Stage | Commands | What it does |
 |:-----:|:--------:|:-------------|
-| **Stage 0** | — | Dataset and model preparation — see [Dataset&Model Preparation](#-datasetmodel-preparation) above |
-| **Stage 1** | `[1]`–`[2]` | Cold start — train the model to produce output in `<think></think><answer></answer>` format, then run inference |
-| **Stage 2** | `[1]`–`[2]` | Reinforcement learning — align the token-level training loss with the semantic-level evaluation metric, then run inference |
-| **Stage 3** | `statistic.py` | Score calculation — the emotion-wheel metric over the inference results |
+| **Stage&nbsp;0** | — | Dataset and model preparation — see [Dataset&Model Preparation](#-datasetmodel-preparation) above |
+| **Stage&nbsp;1** | `[1]`–`[2]` | Cold start — train the model to produce output in `<think></think><answer></answer>` format, then run inference |
+| **Stage&nbsp;2** | `[1]`–`[2]` | Reinforcement learning — align the token-level training loss with the semantic-level evaluation metric, then run inference |
+| **Stage&nbsp;3** | `statistic.py` | Score calculation — the emotion-wheel metric over the inference results |
 
 ---
 
@@ -282,7 +274,7 @@ CUDA_VISIBLE_DEVICES=0 python inference_hybird.py --zeroshot --dataset='OVMERDPl
 <div align="center">
 <table width="600"><tr><td>
 
-**Variants.** Three length penalties $P_1$, $P_2$, $P_3$ were explored as separate architectures; this release ships only the loosest one, $P_3$, as [my_affectgpt/models/affectgpt_r1_noref_ovlabel4.py](my_affectgpt/models/affectgpt_r1_noref_ovlabel4.py), which is what the released Stage-2 config `..._numrestrict3.yaml` selects. The $P_1$/$P_2$ and multi-reward variants are not part of this release.
+**Variants.** Three length penalties $P_1$, $P_2$, $P_3$ were explored as separate architectures; this release ships only the loosest one, $P_3$, as [my_affectgpt/models/affectgpt_r1_noref_ovlabel4.py](my_affectgpt/models/affectgpt_r1_noref_ovlabel4.py), which is what the released Stage-2 config `..._numrestrict3.yaml` selects.
 
 </td></tr></table>
 </div>
